@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"BAD-D Market Result",
+  "type":"object",
+  "required":["experimentId","status","evidence","findings","unknowns","nextAction"],
+  "properties":{
+    "experimentId":{"type":"string"},
+    "status":{"enum":["PROVEN","INFERRED","UNKNOWN","BLOCKED","FAILED"]},
+    "evidence":{"type":"array","items":{"type":"object","required":["claim","level"],"properties":{"claim":{"type":"string"},"level":{"enum":["VERIFIED","INFERRED","UNKNOWN","BLOCKED"]},"source":{"type":"string"},"date":{"type":"string"},"geography":{"type":"string"}}}},
+    "findings":{"type":"array","items":{"type":"string"}},
+    "unknowns":{"type":"array","items":{"type":"string"}},
+    "assumptions":{"type":"array","items":{"type":"string"}},
+    "nextAction":{"type":"string"}
+  }
+}
