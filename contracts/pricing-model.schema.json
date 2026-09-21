@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"BAD-D Pricing Scenario",
+  "type":"object",
+  "required":["currency","scenarios","assumptions"],
+  "properties":{
+    "currency":{"type":"string"},
+    "scenarios":{"type":"array","items":{"type":"object","required":["name","price","billing","includedValue"],"properties":{"name":{"type":"string"},"price":{"type":"number","minimum":0},"billing":{"enum":["one_off","monthly","annual","usage"]},"includedValue":{"type":"array","items":{"type":"string"}},"confidence":{"enum":["VERIFIED","INFERRED","UNKNOWN"]}}}},
+    "assumptions":{"type":"array","items":{"type":"string"}}
+  }
+}
